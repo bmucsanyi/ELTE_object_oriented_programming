@@ -54,6 +54,14 @@ vector<int> setup(string fileName) {
         vec.push_back(e);
         cout << e << " ";
     }
+
+    /// Amennyiben a vektorunk üres a fileban található összes
+    /// adat beolvasása után, akkor a file üres volt.
+    if (vec.size() == 0) {
+        cerr << "Empty file.\n";
+        exit(2);
+    }
+
     cout << endl << endl;
     return vec;
 }
