@@ -55,13 +55,6 @@ vector<int> setup(string fileName) {
         cout << e << " ";
     }
 
-    /// Amennyiben a vektorunk üres a fileban található összes
-    /// adat beolvasása után, akkor a file üres volt.
-    if (vec.size() == 0) {
-        cerr << "Empty file.\n";
-        exit(2);
-    }
-
     cout << endl << endl;
     return vec;
 }
@@ -78,7 +71,7 @@ vector<int> setup(string fileName) {
 /// így a const kulcsszóval látjuk el.
 bool condMaxSearch(const vector<int>& vec, int& maxDepth, int& ind) {
     bool l = false;
-    for (unsigned int i = 1; i < vec.size() - 1; i++) {
+    for (int i = 1; i < int(vec.size() - 1); i++) {
         if (l && vec[i+1] > vec[i] && vec[i-1] > vec[i]) {
             if (maxDepth < vec[i]) {
                 maxDepth = vec[i];
@@ -104,7 +97,7 @@ bool condMaxSearch(const vector<int>& vec, int& maxDepth, int& ind) {
 
 int main() {
     int maxDepth, ind;
-    vector<int> heights = setup("input.txt");
+    vector<int> heights = setup("input3.txt");
     if (condMaxSearch(heights, maxDepth, ind)) {
         cout << "Maximum depth: " << maxDepth << " Index: " << ind + 1 << "." << endl;
     }
