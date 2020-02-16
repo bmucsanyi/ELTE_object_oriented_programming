@@ -11,8 +11,8 @@ public:
     Point(); 
     Point(double x, double y);
     /// Getter metódusok
-    double getX() const; // Const a querykhez.
-    double getY() const; //Const a querykhez.
+    double getX() const; // Const kulcsszó a querykhez.
+    double getY() const; // Const kulcsszó a querykhez.
     /// Setter metódusok
     void setX(double x);
     void setY(double y);
