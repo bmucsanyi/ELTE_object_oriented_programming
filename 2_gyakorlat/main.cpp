@@ -31,7 +31,7 @@ Circle readCircle();
 int count(const vector<Point>& v, const Circle& k);
 
 int main() {
-    /// Tesztelése a Point classnak
+    /// A Point class tesztelése
     /*Point p;
     p.write();
     cout << p;
