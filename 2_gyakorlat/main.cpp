@@ -23,6 +23,7 @@
 
 /// Szorgalmi feladat: A gyakorlathoz hasonló módon
 /// a komplex számok típusának megadása.
+/// Canvas-ben lehet beadni a szorgalmikat.
 
 using namespace std;
 
