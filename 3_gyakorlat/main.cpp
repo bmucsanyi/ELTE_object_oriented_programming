@@ -8,6 +8,7 @@
 #include <iostream>
 #include <vector>
 #include "PrQueue.h"
+#include "menu.h"
 
 /** Ezen a gyakorlaton egy PrQueue-t, azaz egy prioritásos sort
   * fogunk implementálni.
@@ -73,9 +74,17 @@ vector<Item> setup()
 
 int main()
 {
-    vector<Item> vec = setup();
-    PrQueue PrQ(vec);
-    cout << PrQ.getMax();
+  /*
+   * vector<Item> vec = setup();
+   * PrQueue PrQ(vec);
+   * cout << PrQ.getMax();
+   *
+   * return 0;
+   */
+  cout << "Priority queue" << endl;
+
+    Menu Test;
+    Test.run();
 
     return 0;
 }
