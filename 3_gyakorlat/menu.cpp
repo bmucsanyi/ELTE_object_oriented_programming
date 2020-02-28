@@ -9,8 +9,11 @@ using namespace std;
 /// Ellenőrzéshez (0..menudb közötti menüpontokat lehet választani)
 bool check(int a) { return a >= 0 && a <= menudb; }
 
-/// Általános függvény beolvasáshoz Gregorics tanár úr tollából.
-/// Gépes ZH-n írott anyagként nyugodtan elhozhatjátok.
+/** Általános függvény beolvasáshoz Gregorics tanár úr tollából.
+  * Gépes ZH-n írott anyagként nyugodtan elhozhatjátok,
+  * illetve megtalálható a 2. előadás Menü-vel megvalósított
+  * mintakódjában is. (read.hpp)
+  */
 template <typename Item>
 Item read( const std::string &msg, const std::string &err, bool valid(Item))
 {

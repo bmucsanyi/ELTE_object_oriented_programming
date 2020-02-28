@@ -74,14 +74,14 @@ vector<Item> setup()
 
 int main()
 {
-  /*
-   * vector<Item> vec = setup();
-   * PrQueue PrQ(vec);
-   * cout << PrQ.getMax();
-   *
-   * return 0;
-   */
-  cout << "Priority queue" << endl;
+    /*
+    * vector<Item> vec = setup();
+    * PrQueue PrQ(vec);
+    * cout << PrQ.getMax();
+    *
+    * return 0;
+    */
+    cout << "Priority queue" << endl;
 
     Menu Test;
     Test.run();
@@ -160,10 +160,10 @@ TEST_CASE("remMax")
         PQ.add(e5);
         PQ.add(e3);
         e = PQ.remMax();
-        CHECK( e==e5); //Sorrend vizsg�lata
-        CHECK( PQ.getLength()==2);
-        CHECK( PQ.getElement(0)==e3);
-        CHECK( PQ.getElement(1)==e5);
+        CHECK(e == e5); // Sorrend vizsgálata
+        CHECK(PQ.getLength() == 2);
+        CHECK(PQ.getElement(0) == e3);
+        CHECK(PQ.getElement(1) == e5);
     }
     /** További tesztelési lehetőségek: (Elvártak)
       * Több elem, több max, maxok a végén

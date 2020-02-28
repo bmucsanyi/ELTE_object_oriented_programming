@@ -21,7 +21,7 @@ struct Item
     /// A kiíró operátor túlterhelése a múlt órához hasonló módon
     /// történik.
     friend std::ostream &operator<<(std::ostream &os, const Item &e) {
-        os << "Nev es pontszam: " << "<" << e.data << ", " << e.priority << ">";
+        os << "Name and points: " << "<" << e.data << ", " << e.priority << ">";
         return os;
     }
     /** A beolvasó operátort is túlterhelhetjük, ugyanúgy, mint a
