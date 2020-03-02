@@ -4,6 +4,7 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <ostream>
 
 struct Item
 {
@@ -20,7 +21,7 @@ struct Item
     /// A kiíró operátor túlterhelése a múlt órához hasonló módon
     /// történik.
     friend std::ostream &operator<<(std::ostream &os, const Item &e) {
-        os << "Nev es pontszam: " << "<" << e.data << ", " << e.priority << ">";
+        os << "Name and points: " << "<" << e.data << ", " << e.priority << ">";
         return os;
     }
     /** A beolvasó operátort is túlterhelhetjük, ugyanúgy, mint a
@@ -42,8 +43,8 @@ class PrQueue
 {
     public:
         enum Exception { EMPTY_PRQUEUE };
-        PrQueue() : _vec(0) {}
-        PrQueue(const std::vector<Item> &vec) {_vec = vec;}
+        PrQueue() : vec_(0) {}
+        PrQueue(const std::vector<Item> &vec) { vec_ = vec; }
         bool isEmpty() const;
         /// Az item egy összetett struktúra (struct),
         /// így már megszokott módon konstans referenciaként vesszük át.
@@ -55,17 +56,15 @@ class PrQueue
           * de a teszteléshez jól fel tudjuk használni, és implementálni
           * is nagyon könnyű.
           */
-        int getLength() const {return _vec.size();}
+        int getLength() const {return vec_.size();}
         /** Szintén nem kell egy prioritásos sornak biztosítania azt,
           * hogy le tudjuk kérdezni az i-edik elemét, de a teszteléshez
           * jól fog jönni.
           */
-        Item getElement(int index) const {
-            return _vec[index];
-        }
+        Item getElement(int index) const { return vec_[index]; }
 
     private:
-        std::vector<Item> _vec;
+        std::vector<Item> vec_;
         int maxIndex() const;
 };
 
