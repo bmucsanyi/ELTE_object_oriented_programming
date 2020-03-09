@@ -22,7 +22,8 @@
 /// függvényt, osztályt, konstanst.
 using namespace std;
 
-vector<int> setup(string fileName) {
+vector<int> setup(string fileName)
+{
     /// Létrehozunk egy input file streamet (ifstream),
     /// amely konstruktorának megadjuk a file nevét,
     /// amelyből olvasni akarunk.
@@ -69,7 +70,8 @@ vector<int> setup(string fileName) {
 /// paraméterátadás.
 /// Ebben a függvényben azonban nem szeretnénk az input vektor értékeit megváltoztatni,
 /// így a const kulcsszóval látjuk el.
-bool condMaxSearch(const vector<int>& vec, int& maxDepth, int& ind) {
+bool condMaxSearch(const vector<int>& vec, int& maxDepth, int& ind)
+{
     bool l = false;
     for (int i = 1; i < int(vec.size() - 1); i++) {
         if (l && vec[i+1] > vec[i] && vec[i-1] > vec[i]) {
@@ -95,7 +97,8 @@ bool condMaxSearch(const vector<int>& vec, int& maxDepth, int& ind) {
     return l;
 }
 
-int main() {
+int main()
+{
     int maxDepth, ind;
     vector<int> heights = setup("input3.txt");
     if (condMaxSearch(heights, maxDepth, ind)) {
