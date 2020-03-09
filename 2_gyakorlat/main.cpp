@@ -31,7 +31,8 @@ vector<Point> setup();
 Circle readCircle();
 int count(const vector<Point>& v, const Circle& k);
 
-int main() {
+int main()
+{
     /// A Point class tesztelése
     /*Point p;
     p.write();
@@ -56,7 +57,8 @@ int main() {
     return 0;
 }
 
-vector<Point> setup() {
+vector<Point> setup()
+{
     string fileName;
     cout << "Filename:\n>>>";
     cin >> fileName;
@@ -78,7 +80,8 @@ vector<Point> setup() {
     return vec;
 }
 
-Circle readCircle() {
+Circle readCircle()
+{
     double x, y, r;
     cout << "Coordinates of the circle's center:\n>>>";
     cin >> x;
@@ -90,7 +93,8 @@ Circle readCircle() {
     return Circle(x, y, r);
 }
 
-int count(const vector<Point>& v, const Circle& k) {
+int count(const vector<Point>& v, const Circle& k)
+{
     int c = 0;
     for(Point p : v) {
         if (k.contains(p)) c++;
