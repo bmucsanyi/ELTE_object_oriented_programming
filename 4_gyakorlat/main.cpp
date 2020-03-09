@@ -1,3 +1,10 @@
+/*****************************************
+*   Author: Bálint Mucsányi              *
+*   E-mail: mucsanyibalint99@gmail.com   *
+*   Date: 2020. 02. 20.                  *
+*   Project name: Cactuses               *
+*****************************************/
+
 #include <iostream>
 #include <cstdlib>
 #include "Infile.h"
