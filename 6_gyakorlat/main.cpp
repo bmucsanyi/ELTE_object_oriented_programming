@@ -1,3 +1,10 @@
+/*****************************************
+*   Author: Bálint Mucsányi              *
+*   E-mail: mucsanyibalint99@gmail.com   *
+*   Date: 2020. 03. 23.                  *
+*   Project name: Numbers                *
+*****************************************/
+
 #include <iostream>
 #include <cstdlib>
 #include "numberenor.h"
