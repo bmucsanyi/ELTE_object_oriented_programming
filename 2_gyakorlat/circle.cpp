@@ -4,63 +4,63 @@
 
 const double PI = 3.141592653589793238463;
 
-Circle::Circle() : center(), radius(0) {}
+Circle::Circle() : center_(), radius_(0) {}
 
 Circle::Circle(Point center, double radius)
 {
     if (radius < 0) { std::cout << "Invalid radius!\n"; exit(1); }
 
-    this->center = center;
-    this->radius = radius;
+    center_ = center;
+    radius_ = radius;
 }
 
 Circle::Circle(double x, double y, double radius)
 {
     if (radius < 0) { std::cout << "Invalid radius!\n"; exit(1); }
 
-    center.setX(x);
-    center.setY(y);
-    this->radius = radius;
+    center_.setX(x);
+    center_.setY(y);
+    radius_ = radius;
 }
 
 double Circle::getRadius() const
 {
-    return radius;
+    return radius_;
 }
 
 Point Circle::getCenter() const
 {
-    return center;
+    return center_;
 }
 
 void Circle::setRadius(double radius)
 {
     if(radius < 0) {std::cout << "Invalid radius!\n"; exit(1);}
-    this->radius = radius;
+    radius_ = radius;
 }
 
 void Circle::setCenter(Point center)
 {
-    this->center = center;
+    center_ = center;
 }
 
 void Circle::setCenter(double x, double y)
 {
-    center.setX(x);
-    center.setY(y);
+    center_.setX(x);
+    center_.setY(y);
 }
 
 double Circle::area() const
 {
-    return radius * radius * PI;
+    return radius_ * radius_ * PI;
 }
 
 double Circle::distance(Point point) const
 {
-    return sqrt(pow((point.getX() - center.getX()), 2) + pow((point.getY() - center.getY()), 2));
+    return sqrt(pow((point.getX() - center_.getX()), 2) + pow((point.getY() - center_.getY()), 2));
 }
 
 bool Circle::contains(Point point) const
 {
-    return distance(point) <= radius;
+    return distance(point) <= radius_;
 }

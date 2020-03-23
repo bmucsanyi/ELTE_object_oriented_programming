@@ -6,8 +6,7 @@
 #include <iostream>
 #include <ostream>
 
-struct Item
-{
+struct Item {
     std::string data;
     int priority;
     /** Az alábbi módon adhatunk meg default (alapértelmezett) paramétereket
@@ -39,33 +38,32 @@ struct Item
     }
 };
 
-class PrQueue
-{
-    public:
-        enum Exception { EMPTY_PRQUEUE };
-        PrQueue() : vec_(0) {}
-        PrQueue(const std::vector<Item> &vec) { vec_ = vec; }
-        bool isEmpty() const;
-        /// Az item egy összetett struktúra (struct),
-        /// így már megszokott módon konstans referenciaként vesszük át.
-        void add(const Item &e);
-        Item remMax();
-        Item getMax() const;
-        /** Egy prioritásos sornak alapesetben nem kell biztosítani getLength()
-          * metódust (lásd Algoritmusok és adatszerkezetek I.),
-          * de a teszteléshez jól fel tudjuk használni, és implementálni
-          * is nagyon könnyű.
-          */
-        int getLength() const {return vec_.size();}
-        /** Szintén nem kell egy prioritásos sornak biztosítania azt,
-          * hogy le tudjuk kérdezni az i-edik elemét, de a teszteléshez
-          * jól fog jönni.
-          */
-        Item getElement(int index) const { return vec_[index]; }
+class PrQueue {
+public:
+    enum Exception { EMPTY_PRQUEUE };
+    PrQueue() : vec_(0) {}
+    PrQueue(const std::vector<Item> &vec) { vec_ = vec; }
+    bool isEmpty() const;
+    /// Az item egy összetett struktúra (struct),
+    /// így már megszokott módon konstans referenciaként vesszük át.
+    void add(const Item &e);
+    Item remMax();
+    Item getMax() const;
+    /** Egy prioritásos sornak alapesetben nem kell biztosítani getLength()
+      * metódust (lásd Algoritmusok és adatszerkezetek I.),
+      * de a teszteléshez jól fel tudjuk használni, és implementálni
+      * is nagyon könnyű.
+      */
+    int getLength() const {return vec_.size();}
+    /** Szintén nem kell egy prioritásos sornak biztosítania azt,
+      * hogy le tudjuk kérdezni az i-edik elemét, de a teszteléshez
+      * jól fog jönni.
+      */
+    Item getElement(int index) const { return vec_[index]; }
 
-    private:
-        std::vector<Item> vec_;
-        int maxIndex() const;
+private:
+    std::vector<Item> vec_;
+    int maxIndex() const;
 };
 
 #endif

@@ -17,8 +17,8 @@ std::istream& operator>>(std::istream& is, Receipt& r)
 
 ReceiptEnor::ReceiptEnor(const std::string& fname)
 {
-    f.open(fname.c_str());
-    if (f.fail())
+    f_.open(fname.c_str());
+    if (f_.fail())
         throw OPEN_ERROR;
 }
 
@@ -29,15 +29,15 @@ void ReceiptEnor::next()
       * azaz az első '\n'-ig olvas a file-ból, ami nekünk most pont jó,
       * mert soronként pakoltuk a file-ba az adatokat.
       */
-    getline(f, line);
+    getline(f_, line);
     /// Ha már nem tudtunk olvasni, vagy üres sort olvastunk,
     /// akkor álljunk le.
-    if (f.fail() || line == "")
-        st = abnorm;
+    if (f_.fail() || line == "")
+        st_ = abnorm;
     else {
-        st = norm;
+        st_ = norm;
         std::istringstream ss(line);
-        ss >> e;
+        ss >> e_;
         ss.clear();
         ss.str("");
     }

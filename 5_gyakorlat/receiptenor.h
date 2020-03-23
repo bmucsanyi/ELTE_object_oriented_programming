@@ -15,8 +15,7 @@
   * mégis szükség van ezen adattagokra.
   */
 
-struct Receipt
-{
+struct Receipt {
     std::string name;
     std::vector<std::string> productNames;
     std::vector<unsigned int> prices;
@@ -27,22 +26,21 @@ struct Receipt
 
 enum Status { norm, abnorm };
 
-class ReceiptEnor
-{
-    public:
-        enum Exception { OPEN_ERROR };
-        ReceiptEnor(const std::string& fname);         /// Filestream megnyitása
-        ~ReceiptEnor() { f.close(); }                  /// Filestream bezárása
-        void first() { next(); }                       /// Felsoroló first művelete (csak olvas)
-        void next();                                   /// Felsoroló next művelete (szintén csak olvas)
-        Receipt current() const { return e; }          /// Felsoroló current művelete
-        bool end() const { return st == abnorm; }      /// Felsoroló end művelete
+class ReceiptEnor {
+public:
+    enum Exception { OPEN_ERROR };
+    ReceiptEnor(const std::string& fname);         /// Filestream megnyitása
+    ~ReceiptEnor() { f_.close(); }                  /// Filestream bezárása
+    void first() { next(); }                       /// Felsoroló first művelete (csak olvas)
+    void next();                                   /// Felsoroló next művelete (szintén csak olvas)
+    Receipt current() const { return e_; }          /// Felsoroló current művelete
+    bool end() const { return st_ == abnorm; }      /// Felsoroló end művelete
 
-    private:
-        /// Nagyon hasonló a táblás gyakorlaton használt jelölésekhez.
-        Status st;
-        Receipt e;
-        std::ifstream f;
+private:
+    /// Nagyon hasonló a táblás gyakorlaton használt jelölésekhez.
+    Status st_;
+    Receipt e_;
+    std::ifstream f_;
 };
 
 #endif // ReceiptEnor_H

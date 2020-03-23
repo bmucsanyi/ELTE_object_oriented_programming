@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include "PrQueue.h"
+#include "prqueue.h"
 #include "menu.h"
 
 /** Ezen a gyakorlaton egy PrQueue-t, azaz egy prioritásos sort

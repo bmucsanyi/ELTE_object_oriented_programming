@@ -22,7 +22,7 @@ public:
     friend std::ostream& operator<<(std::ostream& os, const Point& p);
 
 private:
-    double x,y;
+    double x_, y_;
 };
 
 #endif

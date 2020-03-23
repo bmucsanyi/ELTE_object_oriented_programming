@@ -20,8 +20,8 @@ public:
     bool contains(Point point) const;
 
 private:
-    Point center;
-    double radius;
+    Point center_;
+    double radius_;
 };
 
 #endif

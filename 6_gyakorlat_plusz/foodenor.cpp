@@ -2,33 +2,33 @@
 
 FoodEnor::FoodEnor(const std::string &str)
 {
-    f.open(str);
-    if (f.fail()) throw OPEN_ERROR;
+    f_.open(str);
+    if (f_.fail()) throw OPEN_ERROR;
 }
 
 void FoodEnor::first()
 {
     std::string line;
     std::istringstream ss;
-    getline(f, line); ss.str(line); ss >> ord;
+    getline(f_, line); ss.str(line); ss >> ord_;
     next();
 }
 
 void FoodEnor::next()
 {
-    if(f.fail()) { st = abnorm; return; }
-    st = norm;
+    if(f_.fail()) { st_ = abnorm; return; }
+    st_ = norm;
 
     std::string line;
     std::istringstream ss;
 
-    food.name = ord.foodName;
-    food.income = 0;
+    food_.name = ord_.foodName;
+    food_.income = 0;
 
     /// Az órai feladathoz teljesen hasonló feldolgozása a fájlnak.
-    while (!f.fail() && ord.foodName == food.name) {
-        food.income += (ord.quantity * ord.unitPrice);
-        getline(f, line); ss.clear(); ss.str(line); ss >> ord;
+    while (!f_.fail() && ord_.foodName == food_.name) {
+        food_.income += (ord_.quantity * ord_.unitPrice);
+        getline(f_, line); ss.clear(); ss.str(line); ss >> ord_;
     }
     ss.clear();
     ss.str("");

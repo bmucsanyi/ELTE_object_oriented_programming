@@ -30,14 +30,14 @@ public:
     /// Felsoroló megszokott műveletei
     void first();
     void next();
-    Food current() { return food; }
-    bool end() { return st == abnorm; }
+    Food current() { return food_; }
+    bool end() { return st_ == abnorm; }
 
 private:
-    std::ifstream f;
-    Status st;
-    Food food;
-    Order ord;
+    std::ifstream f_;
+    Status st_;
+    Food food_;
+    Order ord_;
 };
 
 #endif

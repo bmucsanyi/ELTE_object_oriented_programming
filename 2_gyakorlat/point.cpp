@@ -1,41 +1,41 @@
 #include "point.h"
 
-Point::Point() : x(0), y(0) {}
-Point::Point(double x, double y) : x(x), y(y) {}
+Point::Point() : x_(0), y_(0) {}
+Point::Point(double x, double y) : x_(x), y_(y) {}
 
 double Point::getX() const
 {
-    return x;
+    return x_;
 }
 
 double Point::getY() const
 {
-    return y;
+    return y_;
 }
 
 void Point::setX(double x)
 {
-    this->x = x;
+    this->x_ = x;
 }
 
 void Point::setY(double y)
 {
-    this->y = y;
+    this->y_ = y;
 }
 
 void Point::setXY(double x, double y)
 {
-    this->x = x;
-    this->y = y;
+    x_ = x;
+    y_ = y;
 }
 
 void Point::write() const
 {
-    std::cout << "(" << x << "," << y << ")";
+    std::cout << "(" << x_ << "," << y_ << ")";
 }
 
 std::ostream& operator<<(std::ostream& os, const Point& p)
 {
-    os << "(" << p.x << "," << p.y << ")";
+    os << "(" << p.x_ << "," << p.y_ << ")";
     return os; /// Lehetővé tesszük a kiírások láncolását.
 }

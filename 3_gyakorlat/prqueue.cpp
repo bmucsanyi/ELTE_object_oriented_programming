@@ -1,4 +1,4 @@
-#include "PrQueue.h"
+#include "prqueue.h"
 
 bool PrQueue::isEmpty() const
 {

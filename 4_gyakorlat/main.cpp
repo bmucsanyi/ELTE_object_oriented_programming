@@ -7,8 +7,8 @@
 
 #include <iostream>
 #include <cstdlib>
-#include "Infile.h"
-#include "Outfile.h"
+#include "infile.h"
+#include "outfile.h"
 
 using namespace std;
 

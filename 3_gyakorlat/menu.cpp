@@ -95,7 +95,7 @@ void Menu::add()
     Item e;
     cout << "Item to add:\n>>>";
     cin >> e;
-    Q.add(e);
+    Q_.add(e);
 }
 
 void Menu::remMax()
@@ -103,7 +103,7 @@ void Menu::remMax()
     Item e;
     bool fail = false;
     try {
-        e = Q.remMax();
+        e = Q_.remMax();
     } catch (PrQueue::Exception err) {
         fail = true;
         if (err == PrQueue::EMPTY_PRQUEUE)
@@ -119,7 +119,7 @@ void Menu::getMax()
     Item e;
     bool fail = false;
     try {
-        e = Q.getMax();
+        e = Q_.getMax();
     } catch (PrQueue::Exception err) {
         fail = true;
         if (err == PrQueue::EMPTY_PRQUEUE)
@@ -132,7 +132,7 @@ void Menu::getMax()
 
 void Menu::isEmpty()
 {
-    if (Q.isEmpty())
+    if (Q_.isEmpty())
         cout << "The PrQueue is empty.\n";
     else
         cout << "The PrQueue is not empty.\n";
@@ -142,16 +142,16 @@ void Menu::isEmpty()
 void Menu::loadTest()
 {
     const long int size = 1000000000;
-    PrQueue Q;
+    PrQueue Q_;
     cout << "Current element:\n";
     try {
         for (long int i = 1; i < size; ++i) {
             if (i % 1000000 == 0) cout << i <<endl;
-            Q.add(Item("a", i));
+            Q_.add(Item("a", i));
         }
     } catch(...) {
         cerr << "No more memory!\n";
-        cerr<<"Size of prQueue: " << Q.getLength() << endl;
+        cerr<<"Size of prQueue: " << Q_.getLength() << endl;
     }
 } /// 16777216
 
@@ -159,9 +159,9 @@ void Menu::printPrQueue()
 {
     cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n";
     cout << "PrQueue:\n";
-    cout << "Size of PrQueue (only for testing): " << Q.getLength() << endl;
-    for (int i = 0; i < Q.getLength(); ++i) {
-        cout << Q.getElement(i) << endl;
+    cout << "Size of PrQueue (only for testing): " << Q_.getLength() << endl;
+    for (int i = 0; i < Q_.getLength(); ++i) {
+        cout << Q_.getElement(i) << endl;
     }
     cout << "\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>\n\n";
 }

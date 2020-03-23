@@ -40,7 +40,7 @@ int main()
         }
 
         cout << "Today's income is " << sum << " Forints." << endl;
-    } catch(ReceiptEnor::Exception error) {
+    } catch (ReceiptEnor::Exception error) {
         cerr << "File open error.\n";
         exit(1);
     }

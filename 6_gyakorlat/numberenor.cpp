@@ -2,31 +2,31 @@
 
 NumberEnor::NumberEnor(const std::string &fn)
 {
-    f.open(fn.c_str());
-    if (f.fail())
+    f_.open(fn.c_str());
+    if (f_.fail())
         throw OPEN_ERROR;
 }
 
 void NumberEnor::next()
 {
-    if (f.fail()) 
-        st = abnorm;
+    if (f_.fail()) 
+        st_ = abnorm;
     else {
-        st = norm;
+        st_ = norm;
         /// Alaphelyzetbe állítjuk a jelenlegi elemet.
-        nc.count = 0;
-        nc.number = n;
+        nc_.count = 0;
+        nc_.number = n_;
         /// Addig olvasunk a fájlból, amíg ugyanazt a számot olvassuk, mint a legutóbbi volt.
         /// (az első iterációnál a ciklusfeltétel mindig triviálisan igaz lesz)
-        while (!f.fail() && nc.number == n) {
-            /** Fontos megjegyezni, hogy az f.fail() nem azután lesz
+        while (!f_.fail() && nc_.number == n_) {
+            /** Fontos megjegyezni, hogy az f_.fail() nem azután lesz
               * igaz, miután az utolsó elemet kiolvastuk, hanem miután
               * MEGPRÓBÁLTUK kiolvasni az utolsó utáni elemet, ami nem létezik.
               */
-            nc.count++;
-            f >> n;
+            nc_.count++;
+            f_ >> n_;
         }
-        /// Mikor itt tartunk, már megfelelő értékek fognak szerepelni az nc változónkban.
+        /// Mikor itt tartunk, már megfelelő értékek fognak szerepelni az nc_ változónkban.
     }
 }
 

@@ -22,13 +22,12 @@ using namespace std;
   * kivételeket is kezeltünk.
   */
 
-struct Receipt
-{
+struct Receipt {
     string name;
     unsigned int fullPrice; /// A beolvasás egyből a számla végösszegét állítja majd elő
 };
 
-enum Status{ norm, abnorm };
+enum Status { norm, abnorm };
 
 bool read(Status &st, Receipt &e, ifstream &f)
 {

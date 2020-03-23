@@ -21,9 +21,9 @@ using namespace std;
   */
 
 /// Beolvasás, ügyelve a kiterjesztésre
-string beolvas()
+string read()
 {
-    cout << "Filename\n>>>";
+    cout << "Filename:\n>>>";
     string str; cin >> str;
     if (str.size() < 4 || str.substr(str.size()-4, 4) != ".txt") {
         cerr << "Only .txt extensions are allowed!\n";
@@ -48,7 +48,7 @@ void maxSelect(FoodEnor& t, int &max, Food &elem)
 
 int main()
 {
-    string fn = beolvas();
+    string fn = read();
     try {
         FoodEnor t(fn);
         int max;

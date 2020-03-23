@@ -1,6 +1,6 @@
-#include "Infile.h"
+#include "infile.h"
 
-Infile::Infile(const std::string& fname)
+Infile::Infile(const std::string &fname)
 {
     f.open(fname.c_str());
     if (f.fail())
