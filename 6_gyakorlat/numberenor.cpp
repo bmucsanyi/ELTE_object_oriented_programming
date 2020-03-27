@@ -9,25 +9,26 @@ NumberEnor::NumberEnor(const std::string &fn)
 
 void NumberEnor::next()
 {
-    if (f_.fail()) 
-        st_ = abnorm;
-    else {
-        st_ = norm;
+    end_ = (st_ == abnorm);
+
+    if (!end_) {
         /// Alaphelyzetbe állítjuk a jelenlegi elemet.
         nc_.count = 0;
         nc_.number = n_;
         /// Addig olvasunk a fájlból, amíg ugyanazt a számot olvassuk, mint a legutóbbi volt.
         /// (az első iterációnál a ciklusfeltétel mindig triviálisan igaz lesz)
-        while (!f_.fail() && nc_.number == n_) {
-            /** Fontos megjegyezni, hogy az f_.fail() nem azután lesz
-              * igaz, miután az utolsó elemet kiolvastuk, hanem miután
-              * MEGPRÓBÁLTUK kiolvasni az utolsó utáni elemet, ami nem létezik.
-              */
+        while (st_ == norm && nc_.number == n_) {
             nc_.count++;
-            f_ >> n_;
+            read();
         }
         /// Mikor itt tartunk, már megfelelő értékek fognak szerepelni az nc_ változónkban.
     }
+}
+
+void NumberEnor::read()
+{
+    if (f_ >> n_) st_ = norm;   /// Ha sikeresen tudtunk olvasni a fájlból...
+    else          st_ = abnorm;
 }
 
 std::ostream& operator<<(std::ostream &os, const NumberCount &nc)
