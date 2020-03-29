@@ -16,7 +16,7 @@ using namespace std;
   *     számlák sorozata, ahol egy számlán szerepel a vásárló neve,
   *     az általa vásárolt termékek neve és ára.
   *     Mennyi az aznapi bevétel?
-  * 
+  *
   *     Szorgalmi:
   *     Folytassuk az órai feladatot! Van-e olyan számla, amelyben csupa
   *     legalább 20000 Ft-os termékek szerepelnek?
@@ -36,6 +36,7 @@ int main()
         /// Összegzés programozási tétel felsorolókra
         unsigned int sum = 0;
         for (enor.first(); !enor.end(); enor.next()) {
+            cout << enor.current().fullPrice << endl;
             sum += enor.current().fullPrice;
         }
 

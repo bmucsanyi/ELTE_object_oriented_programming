@@ -24,21 +24,31 @@ ReceiptEnor::ReceiptEnor(const std::string& fname)
 
 void ReceiptEnor::next()
 {
-    std::string line;
-    /** A getline függvény alapértelmezett delimitere a '\n' karakter,
-      * azaz az első '\n'-ig olvas a file-ból, ami nekünk most pont jó,
-      * mert soronként pakoltuk a file-ba az adatokat.
-      */
-    getline(f_, line);
-    /// Ha már nem tudtunk olvasni, vagy üres sort olvastunk,
-    /// akkor álljunk le.
-    if (f_.fail() || line == "")
-        st_ = abnorm;
-    else {
-        st_ = norm;
-        std::istringstream ss(line);
-        ss >> e_;
-        ss.clear();
-        ss.str("");
+    if (!end_) {
+        std::string line;
+        /** A getline függvény alapértelmezett delimitere a '\n' karakter,
+          * azaz az első '\n'-ig olvas a file-ból, ami nekünk most pont jó,
+          * mert soronként pakoltuk a file-ba az adatokat.
+          */
+        getline(f_, line);
+        /// Ha már nem tudtunk olvasni, vagy üres sort olvastunk,
+        /// akkor álljunk le.
+        if (f_.fail() || line == "")
+            st_ = abnorm;
+        else {
+            st_ = norm;
+            std::istringstream ss(line);
+            ss >> e_;
+            ss.clear();
+            ss.str("");
+        }
     }
+    
+    end_ = (st_ == abnorm);
+}
+
+void ReceiptEnor::read()
+{
+    if (f_ >> e_) st_ = norm;   /// Ha sikeresen tudtunk olvasni a fájlból...
+    else          st_ = abnorm;
 }

@@ -34,13 +34,16 @@ public:
     void first() { next(); }                       /// Felsoroló first művelete (csak olvas)
     void next();                                   /// Felsoroló next művelete (szintén csak olvas)
     Receipt current() const { return e_; }          /// Felsoroló current művelete
-    bool end() const { return st_ == abnorm; }      /// Felsoroló end művelete
+    bool end() const { return end_; }      /// Felsoroló end művelete
 
 private:
     /// Nagyon hasonló a táblás gyakorlaton használt jelölésekhez.
     Status st_;
     Receipt e_;
     std::ifstream f_;
+    bool end_;
+
+    void read();
 };
 
 #endif // ReceiptEnor_H
