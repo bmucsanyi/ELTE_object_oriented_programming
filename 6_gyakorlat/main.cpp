@@ -9,7 +9,6 @@
 #include <cstdlib>
 #include "numberenor.h"
 
-
 using std::cout;
 using std::cerr;
 using std::endl;
