@@ -8,7 +8,7 @@ Department::Department(const std::string& fileName)
     std::string productName;
     int price;
     while (f >> productName >> price)
-        stock.push_back(new Product(productName, price));
+        stock.push_back(std::make_shared<Product>(productName, price));
     f.close();
 }
 
@@ -22,7 +22,7 @@ void Department::takeOut(unsigned int ind)
         throw INVALID_INDEX;
 }
 
-Product* Department::getProduct(unsigned int ind) const
+std::shared_ptr<Product> Department::getProduct(unsigned int ind) const
 {
     if (ind < stock.size())
         return stock[ind];

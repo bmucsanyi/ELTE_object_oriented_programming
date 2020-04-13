@@ -2,14 +2,14 @@
 #define SHOP_H
 
 #include "Department.h"
+#include <memory>
 
 class Shop {
 public:
-    Department* food;
-    Department* technical;
+    std::shared_ptr<Department> food;
+    std::shared_ptr<Department> technical;
 
     Shop(const std::string& fname, const std::string& tname);
-    ~Shop();
 };
 
 #endif

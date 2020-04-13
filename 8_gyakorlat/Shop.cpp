@@ -2,12 +2,6 @@
 
 Shop::Shop(const std::string& fname, const std::string& tname)
 {
-    food = new Department(fname);
-    technical = new Department(tname);
-}
-
-Shop::~Shop()
-{ 
-    delete food;
-    delete technical;
+    food = std::make_shared<Department>(fname);
+    technical = std::make_shared<Department>(tname);
 }

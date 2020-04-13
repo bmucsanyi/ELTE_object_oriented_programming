@@ -1,3 +1,5 @@
+computer 450
 computer 300
+computer 6000
 tablet 350
 mouse 50

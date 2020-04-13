@@ -1,10 +1,11 @@
 #ifndef DEPARTMENT_H
 #define DEPARTMENT_H
 
+#include "Product.h"
 #include <fstream>
+#include <memory>
 #include <vector>
 
-#include "Product.h"
 
 class Department {
 public:
@@ -14,11 +15,11 @@ public:
     /// szeretjük ezeket másolgatni.
     Department(const std::string& fileName);
     void takeOut(unsigned int ind);
-    Product* getProduct(unsigned int ind) const;
+    std::shared_ptr<Product> getProduct(unsigned int ind) const;
     unsigned int stockPiece() const { return stock.size(); }
 
 private:
-    std::vector<Product*> stock;
+    std::vector<std::shared_ptr<Product>> stock;
 };
 
 #endif

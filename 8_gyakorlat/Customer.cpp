@@ -30,7 +30,7 @@ void Customer::purchase(Shop& shop)
     }
 }
 
-void Customer::putInCart(Product* product)
+void Customer::putInCart(std::shared_ptr<Product> product)
 {
     if (product != nullptr)
         basket.push_back(product);
@@ -38,7 +38,7 @@ void Customer::putInCart(Product* product)
         throw NULLPTR_ERROR;
 }
 
-bool Customer::linSearch(const std::string& prName, Department* d, unsigned int& ind) const
+bool Customer::linSearch(const std::string& prName, std::shared_ptr<Department> d, unsigned int& ind) const
 {
     for (ind = 0; ind < d->stockPiece(); ++ind) {
         if (prName == d->getProduct(ind)->getName())
@@ -47,7 +47,7 @@ bool Customer::linSearch(const std::string& prName, Department* d, unsigned int&
     return false;
 }
 
-bool Customer::minSearch(const std::string& prName, Department* d, unsigned int& ind) const
+bool Customer::minSearch(const std::string& prName, std::shared_ptr<Department> d, unsigned int& ind) const
 {
     bool l = false;
     int minPrice;
@@ -69,7 +69,7 @@ bool Customer::minSearch(const std::string& prName, Department* d, unsigned int&
 std::ostream& operator<<(std::ostream& os, const Customer& c)
 {
     os << c.name << "'s basket contains:\n";
-    for (Product* p : c.basket) {
+    for (auto p : c.basket) {
         os << " " << p->getName() << " " << p->getPrice() << "USD\n";
     }
     return os;
