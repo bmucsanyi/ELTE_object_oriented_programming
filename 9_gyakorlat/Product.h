@@ -3,12 +3,14 @@
 
 #include <string>
 
-class Product {
+class Product
+{
 public:
-    enum Exception { INVALID_PRICE };
-    Product(std::string n, int p)
-        : name(n)
-        , price(p)
+    enum Exception
+    {
+        INVALID_PRICE
+    };
+    Product(std::string n, int p) : name(n), price(p) /* price = p; */
     {
         if (price <= 0)
             throw INVALID_PRICE;

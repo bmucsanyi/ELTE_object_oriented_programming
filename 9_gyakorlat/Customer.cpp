@@ -1,7 +1,6 @@
 #include "Customer.h"
 
-Customer::Customer(const std::string& name, const std::string& fileName)
-    : name(name)
+Customer::Customer(const std::string& name, const std::string& fileName) : name(name)
 {
     std::ifstream f(fileName.c_str());
     if (f.fail())
@@ -14,14 +13,17 @@ Customer::Customer(const std::string& name, const std::string& fileName)
 
 void Customer::purchase(Shop& shop)
 {
-    for (const std::string& productName : list) {
+    // for (int i = 0; i < list.size(); ++i) {
+    //
+    // }
+    for (auto productName : list) {
         unsigned int ind; /// Fontos az unsigned.
         if (linSearch(productName, shop.food, ind)) {
             putInCart(shop.food->getProduct(ind));
             shop.food->takeOut(ind);
         }
     }
-    for (const std::string& productName : list) {
+    for (auto productName : list) {
         unsigned int ind;
         if (minSearch(productName, shop.technical, ind)) {
             putInCart(shop.technical->getProduct(ind));
@@ -38,6 +40,7 @@ void Customer::putInCart(std::shared_ptr<Product> product)
         throw NULLPTR_ERROR;
 }
 
+/// const == objektum állapota nem változik a függvény hívása során
 bool Customer::linSearch(const std::string& prName, std::shared_ptr<Department> d, unsigned int& ind) const
 {
     for (ind = 0; ind < d->stockPiece(); ++ind) {

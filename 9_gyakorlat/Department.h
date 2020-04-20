@@ -19,7 +19,7 @@ public:
     unsigned int stockPiece() const { return stock.size(); }
 
 private:
-    std::vector<std::shared_ptr<Product>> stock;
+    std::vector<std::shared_ptr<Product>> stock; /// Product*
 };
 
 #endif

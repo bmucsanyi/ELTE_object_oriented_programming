@@ -7,8 +7,7 @@
 
 class Customer {
 public:
-    enum Exception { OPEN_ERROR,
-        NULLPTR_ERROR };
+    enum Exception { OPEN_ERROR, NULLPTR_ERROR };
     Customer(const std::string& name, const std::string& fileName);
     void purchase(Shop& shop);
     void putInCart(std::shared_ptr<Product> product);
