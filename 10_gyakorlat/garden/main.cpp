@@ -14,6 +14,13 @@
 
 using namespace std;
 
+/** Egy kertet egy kertész gondoz. A kert parcellákból áll, minden parcellába egyféle növény
+  * ültethető. Az ültetés idejét eltároljuk (hónapban). A növények lehetnek haszonnövények, mint
+  * burgonya, borsó, paprika; vagy virágok, mint tulipán, szegfű, rózsa. A növényeknek ismerjük az
+  * érési idejét (hónapban). Listázza ki a kertész azokat a parcellákat, ahol az adott hónapban
+  * haszonnövények fognak beérni!
+  */
+
 void destroyPlants()
 {
     Potato::destroy();

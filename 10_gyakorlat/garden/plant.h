@@ -93,3 +93,21 @@ private:
     static Tulip* inst;
 };
 #endif
+
+/** Example program
+  * #include <iostream>
+  * #include <string>
+  * 
+  * class Dummy
+  * {
+  * public:
+  *     static void foo() { std::cout << "foo" << std::endl; }   
+  * };
+  * 
+  * int main()
+  * {
+  * Dummy dumDum = Dummy();
+  * dumDum.foo();
+  * Dummy::foo();
+  * }
+  */ 

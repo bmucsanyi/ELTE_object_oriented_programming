@@ -1,3 +1,5 @@
 *.out
+*.o
 .vscode
-1_ZH
+/1_ZH
+/6_gyakorlat_plusz
