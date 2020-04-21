@@ -33,5 +33,5 @@ void menu(FileSystem* sys)
 {
     /// Feladat: Felhasználó beadja a nevet, system megkeresi, visszatér a pointerével.
     /// Pointer alapján ki kell írni a méretét.
-    cout << sys->searchForEntry("dir1")->getSize();
+    cout << sys->searchForEntry("dir1")->getSize() << endl;
 }

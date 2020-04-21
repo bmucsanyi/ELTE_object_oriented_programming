@@ -9,7 +9,7 @@ public:
     virtual ~Entry() {}
     std::string getName() const { return name; }
     virtual unsigned int getSize() const = 0;
-    virtual Entry* searchFor(std::string const& fname) { return nullptr; }
+    virtual Entry* searchFor(std::string const& fname) = 0;
 
 protected:
     std::string name;
