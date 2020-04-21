@@ -1,13 +1,13 @@
 CXX = g++
 CXXFLAGS = -std=c++11 -pedantic -Wall -Wextra
 HEADERS = directory.h entry.h file.h filesystem.h
-OBJS = $(patsubst %.cpp,%.o,$(wildcard *.cpp))
+OBJS = $(patsubst %.cpp, %.o, $(wildcard *.cpp))
 
 .PHONY: all clean
 
 all: main.out
 
-%.o: %.c $(HEADERS)
+%.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) $< -c -o $@
 
 main.out: $(OBJS)
