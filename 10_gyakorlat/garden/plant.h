@@ -92,6 +92,7 @@ private:
     Tulip() : Flower(2) {}
     static Tulip* inst;
 };
+
 #endif
 
 /** Example program
@@ -106,8 +107,8 @@ private:
   * 
   * int main()
   * {
-  * Dummy dumDum = Dummy();
-  * dumDum.foo();
-  * Dummy::foo();
+  *     Dummy dumDum = Dummy();
+  *     dumDum.foo();
+  *     Dummy::foo();
   * }
   */ 

@@ -7,12 +7,13 @@
 
 class Gardener {
 public:
-    Gardener(std::string const& name) : name(name) {}
-    void plant(Garden& g, char const plantName, unsigned int parcelNum, unsigned int date);
-    void list(Garden const& g, unsigned int month);
+    Gardener(std::string const& name, Garden& garden) : name(name), garden(garden) {}
+    void plant(char const plantName, unsigned int parcelNum, unsigned int date);
+    void list(unsigned int month);
 
 private:
     std::string name;
+    Garden garden;
 };
 
 #endif

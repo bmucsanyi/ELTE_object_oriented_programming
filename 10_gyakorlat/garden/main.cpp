@@ -54,20 +54,20 @@ void simulation()
     cout << "Gardener's name: "; /// Nem lényeges a feladat szempontjából.
     string gn;
     cin >> gn;
-    Gardener gardener(gn);
+    Gardener gardener(gn, garden);
 
     char t;
     unsigned int parcel;
     unsigned int month;
     while (f >> t >> parcel >> month) {
-        gardener.plant(garden, t, parcel - 1, month);
+        gardener.plant(t, parcel - 1, month);
     }
 
     cout << "Which month would you like to list the ripe industrial crops for?\n>>> ";
     unsigned int choice;
     cin >> choice;
     cout << "**************************************" << endl;
-    gardener.list(garden, choice);
+    gardener.list(choice);
     cout << "**************************************" << endl;
 }
 
