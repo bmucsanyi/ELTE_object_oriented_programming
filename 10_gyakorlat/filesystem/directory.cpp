@@ -1,12 +1,5 @@
 #include "directory.h"
 
-Directory::~Directory()
-{
-    for (Entry* e : entries) {
-        delete e;
-    }
-}
-
 unsigned int Directory::getSize() const
 {
     /// Summation

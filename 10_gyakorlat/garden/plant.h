@@ -2,7 +2,6 @@
 #define PLANT_H
 
 #include <iostream>
-#include <memory>
 
 class Plant {
 public:

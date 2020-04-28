@@ -1,12 +1,5 @@
 #include "filesystem.h"
 
-FileSystem::~FileSystem()
-{
-    for (Entry* e : entries) {
-        delete e;
-    }
-}
-
 Entry* FileSystem::searchForEntry(std::string const& fname)
 {
     /// LinSearch
