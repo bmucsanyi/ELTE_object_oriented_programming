@@ -1,0 +1,5 @@
+Mike 03/04/2019 bear 240 deer 220 fox 30
+Mike 03/05/2019 rabbit 15
+Jack 03/04/2019 rabbit 20 rabbit 25
+Jack 03/04/2019 rabbit 21 bear 1
+Zoe 03/04/2019 bear 500 wolf 78
