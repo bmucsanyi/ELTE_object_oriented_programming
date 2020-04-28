@@ -12,8 +12,6 @@
 
 using namespace std;
 
-/// Általánosságban elmondható, hogy minden szint 3 komponensből áll: Struct, Programozási tétel, Felsoroló.
-
 /********************** ALSÓ SZINT **********************/
 
 struct Student {
