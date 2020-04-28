@@ -14,6 +14,31 @@ using namespace std;
 
 /********************** ALSÓ SZINT **********************/
 
+/// (2) - struct
+struct Result {
+    double sum;
+    int count;
+    Result() {}
+    Result(double s, int c)
+        : sum(s)
+        , count(c)
+    {
+    }
+};
+
+/// (2) - programozási tétel
+class Average : public Summation<int, Result> {
+protected:
+    Result func(const int& e) const override { return Result(e, 1); }
+    Result neutral() const override { return Result(0.0, 0); }
+    Result add(const Result& a, const Result& b) const override
+    {
+        return Result(a.sum + b.sum, a.count + b.count);
+    }
+};
+
+/********************** FELSŐ SZINT **********************/
+
 struct Student {
     string name;
     double avr;
@@ -42,31 +67,6 @@ istream& operator>>(istream& inp, Student& s)
 class BestStudent : public MaxSearch<Student, double> {
 protected:
     double func(const Student& e) const override { return e.avr; }
-};
-
-/********************** FELSŐ SZINT **********************/
-
-/// (2) - struct
-struct Result {
-    double sum;
-    int count;
-    Result() {}
-    Result(double s, int c)
-        : sum(s)
-        , count(c)
-    {
-    }
-};
-
-/// (2) - programozási tétel
-class Average : public Summation<int, Result> {
-protected:
-    Result func(const int& e) const override { return Result(e, 1); }
-    Result neutral() const override { return Result(0.0, 0); }
-    Result add(const Result& a, const Result& b) const override
-    {
-        return Result(a.sum + b.sum, a.count + b.count);
-    }
 };
 
 int main(int argc, char* argv[])
