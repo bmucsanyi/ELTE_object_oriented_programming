@@ -7,7 +7,7 @@
 #include <iostream>
 
 
-/// Fájlban: hallgató egy szavas neve + tárgy egy szavas neve + (komment,jegy) párosok, amiket a hallgató abból a tárgyból szerzett
+/// Fájlban: hallgató egyszavas neve + tárgy egyszavas neve + (komment,jegy) párosok, amiket a hallgató abból a tárgyból szerzett
 /// egy hallgatóhoz több tárgy is tartozik
 /// a fájl hallgatók szerint rendezett
 

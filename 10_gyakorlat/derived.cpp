@@ -22,7 +22,7 @@ public:
     {
         kor = k;
         cout << "A kor mostantol " << k << endl;
-    };
+    }
 };
 
 /// OEP elv: öröklődés
@@ -44,6 +44,10 @@ void printFajJo(Eloleny& e)
 {
     cout << "Faj: " << e.faj() << endl;
 }
+
+/*
+Parent* child = new Child();
+*/
 
 class Shape {
 public:
