@@ -1,10 +1,13 @@
-#include <iostream>
+#include "library/linsearch.hpp"
+#include "library/seqinfileenumerator.hpp"
 #include "library/stringstreamenumerator.hpp"
 #include "library/summation.hpp"
-#include "library/seqinfileenumerator.hpp"
-#include "library/linsearch.hpp"
+#include <iostream>
+
 
 using namespace std;
+
+/// Minden vadász lőtt-e medvét?
 
 ///3. szint
 struct Animal {
@@ -13,7 +16,8 @@ struct Animal {
     friend istream& operator>>(istream& is, Animal& a);
 };
 
-istream& operator>>(istream& is, Animal& a) {
+istream& operator>>(istream& is, Animal& a)
+{
     is >> a.name >> a.weight;
     return is;
 }
@@ -21,7 +25,7 @@ istream& operator>>(istream& is, Animal& a) {
 class CaughtBearRace : public Summation<Animal, bool> {
     bool func(const Animal& e) const override { return e.name == "bear"; }
     bool neutral() const override { return false; }
-    bool add( const bool& a, const bool& b) const override { return a || b; }
+    bool add(const bool& a, const bool& b) const override { return a || b; }
 };
 
 ///2. szint
@@ -31,10 +35,11 @@ struct Line {
     friend istream& operator>>(istream& is, Line& l);
 };
 
-istream& operator>>(istream& is, Line& l) {
+istream& operator>>(istream& is, Line& l)
+{
     string line;
     string tmp;
-    getline(is, line, '\n');
+    getline(is, line);
     stringstream ss(line);
     ss >> l.hunterName >> tmp;
 
@@ -49,13 +54,17 @@ istream& operator>>(istream& is, Line& l) {
 
 class CaughtBear : public Summation<Line, bool> {
 public:
-    CaughtBear(string hunterName) : hunterName(hunterName) {}
+    CaughtBear(string hunterName)
+        : hunterName(hunterName)
+    {
+    }
+
 private:
     string hunterName;
     bool func(const Line& e) const override { return e.bear; }
     bool neutral() const override { return false; }
-    bool add( const bool& a, const bool& b) const override { return a || b; }
-    void first() override { }
+    bool add(const bool& a, const bool& b) const override { return a || b; }
+    void first() override {}
     bool whileCond(const Line& current) const override { return current.hunterName == hunterName; }
 };
 
@@ -68,19 +77,26 @@ struct Hunter {
 class HunterEnumerator : public Enumerator<Hunter> {
 public:
     HunterEnumerator(string fileName) { f = new SeqInFileEnumerator<Line>(fileName); }
-    void first() override { f->first(); next(); }
+    void first() override
+    {
+        f->first();
+        next();
+    }
     void next() override;
     bool end() const override { return _end; }
     Hunter current() const override { return elem; }
     ~HunterEnumerator() { delete f; }
+
 private:
     SeqInFileEnumerator<Line>* f;
     bool _end;
     Hunter elem;
 };
 
-void HunterEnumerator::next() {
-    if ((_end = f->end())) return;
+void HunterEnumerator::next()
+{
+    if ((_end = f->end()))
+        return;
 
     elem.hunterName = f->current().hunterName;
 
@@ -95,15 +111,18 @@ class AllShotBear : public LinSearch<Hunter, true> {
     bool cond(const Hunter& e) const override { return e.bear; }
 };
 
-int main() {
+int main()
+{
     try {
         HunterEnumerator enor("input.txt");
         AllShotBear pr;
         pr.addEnumerator(&enor);
         pr.run();
 
-        if (pr.found()) cout << "Every hunter shot bear in this season." << endl;
-        else cout << "Not every hunter shot bear in this season." << endl;
+        if (pr.found())
+            cout << "Every hunter shot bear in this season." << endl;
+        else
+            cout << "Not every hunter shot bear in this season." << endl;
     } catch (SeqInFileEnumerator<Line>::Exceptions err) {
         cerr << "File not found!\n";
         exit(1);

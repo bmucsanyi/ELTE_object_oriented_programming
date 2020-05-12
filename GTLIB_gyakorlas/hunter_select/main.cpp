@@ -100,7 +100,6 @@ private:
         return ss.str();
     }
     bool cond(const Hunter& e) const { return e.heaviestType == "bear"; }
-    void first() override { cout << "Hi!\n"; _enor->first();}
 };
 
 int main() {
