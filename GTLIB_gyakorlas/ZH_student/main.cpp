@@ -1,10 +1,12 @@
 #include <iostream>
 ///3. szint
-#include "library/stringstreamenumerator.hpp"
 #include "library/linsearch.hpp"
+#include "library/stringstreamenumerator.hpp"
+
 ///2. szint
-#include "library/seqinfileenumerator.hpp"
 #include "library/counting.hpp"
+#include "library/seqinfileenumerator.hpp"
+
 ///1. Szint
 #include "library/maxsearch.hpp"
 
@@ -17,13 +19,15 @@ struct Mark {
     friend istream& operator>>(istream& is, Mark& m);
 };
 
-istream& operator>>(istream& is, Mark& m) {
+istream& operator>>(istream& is, Mark& m)
+{
     is >> m.comment >> m.grade;
     return is;
 }
 
 class IsPassed : public LinSearch<Mark, true> {
-    bool cond(const Mark& e) const override {
+    bool cond(const Mark& e) const override
+    {
         return e.grade > 1;
     }
 };
@@ -36,7 +40,8 @@ struct Line {
     friend istream& operator>>(istream& is, Line& l);
 };
 
-istream& operator>>(istream& is, Line& l) {
+istream& operator>>(istream& is, Line& l)
+{
     string line;
     getline(is, line, '\n');
     stringstream ss(line);
@@ -55,8 +60,9 @@ istream& operator>>(istream& is, Line& l) {
 class CountPassed : public Counting<Line> {
 public:
     CountPassed(const string& name) : name(name) {}
+
 private:
-    void first() override {}
+    void first() override { }
     bool whileCond(const Line& current) const override { return current.name == name; }
     bool cond(const Line& e) const override { return e.passed; }
     string name;
@@ -71,20 +77,27 @@ struct Student {
 class StudentEnumerator : public Enumerator<Student> {
 public:
     StudentEnumerator(const string& fileName) { enor = new SeqInFileEnumerator<Line>(fileName); }
-    void first() override { enor->first(); next(); }
+    void first() override
+    {
+        enor->first();
+        next();
+    }
     void next() override;
     bool end() const override { return _end; }
     Student current() const override { return elem; }
+
 private:
     SeqInFileEnumerator<Line>* enor;
     bool _end;
     Student elem;
 };
 
-void StudentEnumerator::next() {
-    if ((_end = enor->end())) return;
+void StudentEnumerator::next()
+{
+    if ((_end = enor->end()))
+        return;
 
-    elem.name = enor->current().name; ///Az enor-ban az előző lépés name-je van benne, ami pont az, ami nekünk kell, hiszen akkor áll le, amikor a név már nem egyezik.
+    elem.name = enor->current().name; /// Az enor-ban az előző lépés name-je van benne, ami pont az, ami nekünk kell, hiszen akkor áll le, amikor a név már nem egyezik.
 
     CountPassed cp(elem.name);
     cp.addEnumerator(enor);
@@ -95,12 +108,14 @@ void StudentEnumerator::next() {
 
 class MinPassed : public MaxSearch<Student, int, Less<int>> {
 private:
-    int func(const Student& e) const override {
+    int func(const Student& e) const override
+    {
         return e.numberOfPassed;
     }
 };
 
-int main() {
+int main()
+{
     try {
         StudentEnumerator enor("input.txt");
         MinPassed pr;
@@ -108,8 +123,7 @@ int main() {
         pr.run();
         if (pr.found()) {
             cout << pr.optElem().name << " passed the least courses. (" << pr.opt() << ")\n";
-        }
-        else {
+        } else {
             cout << "Empty file!\n";
         }
     } catch (SeqInFileEnumerator<Line>::Exceptions err) {
