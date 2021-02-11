@@ -1,7 +1,0 @@
-Andi oep zh1 2
-Dani oep ZH1 5 PZH1 4
-Dani algo zh1 5 zh2 4
-Peti eva bead1 5 bead2 3 zh 1
-Peti algo zh1 3 zh2 1
-Teri oep zh1 5
-Teri algo zh1 1

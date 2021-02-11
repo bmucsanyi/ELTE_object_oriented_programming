@@ -1,4 +1,0 @@
-Péter 1063Szinyei futás100 3 mellúszás500 1 magasugrás 1
-Mosi 1063Szinyei futás1000000 3 mellúszás500 10 magasugrás 150
-Péter 1061Deak futás100 3 mellúszás500 1 magasugrás 1
-Péter2 1061Deak futás100 3 mellúszás500 1 magasugrás 1

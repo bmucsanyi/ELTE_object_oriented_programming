@@ -1,5 +1,0 @@
-apple 1
-pear 2
-apple 2
-bread 2
-cake 3

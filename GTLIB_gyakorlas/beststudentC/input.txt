@@ -1,3 +1,0 @@
-Bali Zh1 5 Zh2 2 Zh3 4
-Peti Zh1 2 Zh2 2 Zh3 2
-Zoli Zh1 5 Zh2 3 Zh3 4 

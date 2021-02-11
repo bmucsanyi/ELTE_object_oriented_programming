@@ -1,6 +1,0 @@
-name  bank          card        pin     account     amount
-Joska otp           otpcard1001 1001    otp1001     10500
-Joska otp           otpcard1002 1001    otp1001     5000
-Joska otp           otpcard1003 1001    otp1002     5000
-Pista raiffeisen    raicard6001 6001    rai6001     1000
-Pista khb           khbcard8001 8001    khb8001     10000
