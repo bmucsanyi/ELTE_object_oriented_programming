@@ -2,7 +2,6 @@
 *.o
 .vscode
 
-/lab_2/lower_triangle_matrix
 /lab_3
 /lab_4
 /lab_5
