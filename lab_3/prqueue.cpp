@@ -2,7 +2,7 @@
 
 bool PrQueue::isEmpty() const
 {
-    return vec_.size() == 0;
+    return m_vec.size() == 0;
 }
 
 /* Item is a compound structure,
@@ -12,7 +12,7 @@ bool PrQueue::isEmpty() const
  */
 void PrQueue::add(const Item& e)
 {
-    vec_.push_back(e);
+    m_vec.push_back(e);
 }
 
 int PrQueue::maxIndex() const
@@ -21,11 +21,11 @@ int PrQueue::maxIndex() const
      * The methods and functions that call this method have to make
      * sure that this is only called for non-empty priority queues.
      */
-    int maxim = vec_[0].priority;
+    int maxim = m_vec[0].priority;
     int ind = 0;
-    for (int i = 1; i < int(vec_.size()); ++i) {
-        if (vec_[i].priority > maxim) {
-            maxim = vec_[i].priority;
+    for (int i = 1; i < int(m_vec.size()); ++i) {
+        if (m_vec[i].priority > maxim) {
+            maxim = m_vec[i].priority;
             ind = i;
         }
     }
@@ -40,11 +40,11 @@ Item PrQueue::remMax()
      * (In reality this is an integer, as the values of enum
      *  elements are mapped to integers.)
      */
-    if (vec_.size() == 0) throw EMPTY_PRQUEUE;
+    if (m_vec.size() == 0) throw EMPTY_PRQUEUE;
     int ind = maxIndex(); /// We select the index of the maximal element.
-    Item e = vec_[ind]; /// We take out the maximal element.
-    vec_[ind] = vec_.back(); /// We overwrite the maximal element with the last element of the vector.
-    vec_.pop_back(); /// We remove the last element of the vector.
+    Item e = m_vec[ind]; /// We take out the maximal element.
+    m_vec[ind] = m_vec.back(); /// We overwrite the maximal element with the last element of the vector.
+    m_vec.pop_back(); /// We remove the last element of the vector.
     return e;
 }
 
@@ -54,8 +54,8 @@ Item PrQueue::getMax() const
      * is that we do not remove the maximal element here,
      * we only query it (hence the const keyword).
      */
-    if (vec_.size() == 0) throw EMPTY_PRQUEUE;
+    if (m_vec.size() == 0) throw EMPTY_PRQUEUE;
     int ind = maxIndex();
-    Item e = vec_[ind];
+    Item e = m_vec[ind];
     return e;
 }

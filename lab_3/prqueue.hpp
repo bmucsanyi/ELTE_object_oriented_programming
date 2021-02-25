@@ -42,8 +42,8 @@ struct Item {
 class PrQueue {
 public:
     enum Exception { EMPTY_PRQUEUE };
-    PrQueue() : vec_(0) {}
-    PrQueue(const std::vector<Item> &vec) { vec_ = vec; }
+    PrQueue() : m_vec(0) {}
+    PrQueue(const std::vector<Item> &vec) { m_vec = vec; }
     bool isEmpty() const;
     // Item is a compound structure (struct),
     // so we take it as a constant reference, just as we usually do.
@@ -55,15 +55,15 @@ public:
      * but for the sake of testing it is very convenient to use, and
      * easy to implement.
      */
-    int getLength() const {return vec_.size();}
+    int getLength() const {return m_vec.size();}
     /* A priority queue also doesn't have to provide the possibility
      * of getting an element by index, but we will make good use of it
      * when testing the type.
      */
-    Item getElement(int index) const { return vec_[index]; }
+    Item getElement(int index) const { return m_vec[index]; }
 
 private:
-    std::vector<Item> vec_;
+    std::vector<Item> m_vec;
     int maxIndex() const;
 };
 

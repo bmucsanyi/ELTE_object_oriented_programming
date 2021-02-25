@@ -14,7 +14,7 @@ private:
     void isEmpty();
     void loadTest();
     void printPrQueue();
-    PrQueue Q_;
+    PrQueue m_Q;
 };
 
 #endif // MENU_H
