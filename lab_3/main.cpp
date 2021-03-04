@@ -1,7 +1,7 @@
 /*****************************************
 *   Author: Bálint Mucsányi              *
 *   E-mail: mucsanyibalint99@gmail.com   *
-*   Date: 2020. 02. 24.                  *
+*   Date: 2021. 02. 24.                  *
 *   Project name: PrQueue and testing    *
 *****************************************/
 
@@ -39,7 +39,7 @@
  *    we save the maximal element, overwrite it with the last
  *    element of the vector, then use pop_back on the vector
  *    and return the saved maximal element.
- * max: Returns the Item with maximal priority in the queue.
+ * getMax: Returns the Item with maximal priority in the queue.
  *  - See remMax. The only difference is that we don't take
  *    out the maximal element.
  * 
