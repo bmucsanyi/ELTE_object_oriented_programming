@@ -1,5 +1,6 @@
 *.out
 *.o
+*.exe
 .vscode
 
 /lab_5

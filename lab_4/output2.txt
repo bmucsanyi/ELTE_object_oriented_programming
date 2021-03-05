@@ -1,3 +1,0 @@
-Name: kaktusz	Country: Mexiko	Size: kozepes	Color: piros
-Name: kaktusz4	Country: Mexiko	Size: kicsi	Color: piros
-Name: kaktusz5	Country: Magyarorszag	Size: nagy	Color: piros
