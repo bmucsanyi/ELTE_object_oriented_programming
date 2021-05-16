@@ -1,0 +1,40 @@
+Alan1 PPKE highjump 21 running100 25
+Alan2 PPKE highjump 22 running100 26
+Alan3 PPKE highjump 23 running100 27
+Alan4 PPKE highjump 24 running100 28
+Alan5 PPKE highjump 25 running100 29
+Alan6 PPKE highjump 26 running100 30
+Alan7 PPKE highjump 27 running100 31
+Alan8 PPKE highjump 28 running100 32
+Alan9 PPKE highjump 29 running100 33
+Alan10 PPKE highjump 30 running100 34
+Alan11 PPKE highjump 31 running100 35
+Alan12 PPKE highjump 32 running100 36
+Alan13 PPKE running200 1 longjump 1
+Alan14 PPKE running200 2 longjump 2
+Alan15 PPKE running200 3 longjump 3
+Alan16 PPKE running200 4 longjump 4
+Alan17 PPKE
+Bob1 OE highjump 1 running100 2
+Bob2 OE highjump 2 running100 3
+Bob3 OE highjump 3 running100 4
+Bob4 OE highjump 4 running100 5
+Bob5 OE highjump 5 running100 6
+Bob6 OE highjump 6 running100 7
+Bob7 OE highjump 7 running100 8
+Bob8 OE highjump 8 running100 9
+Bob9 OE highjump 9 running100 10
+Bob10 OE running100 11
+Peter1 ELTE highjump 10 running100 12
+Peter2 ELTE highjump 11 running100 13
+Peter3 ELTE highjump 12 running100 14
+Peter4 ELTE highjump 13 running100 15
+Peter5 ELTE highjump 14 running100 16
+Peter6 ELTE highjump 15 running100 17
+Peter7 ELTE highjump 16 running100 18
+Peter8 ELTE highjump 17 running100 19
+Peter9 ELTE highjump 18 running100 20
+Peter10 ELTE highjump 19 running100 21
+Peter11 ELTE running100 22
+Peter12 ELTE running100 23
+Daniel BME highjump 20 running100 24
